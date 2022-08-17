@@ -32,7 +32,7 @@ else:
 os.system('clear')
 def univ(i, usr, pwd):
 	ses = req.Session()
-	url = 'https://infokhs.umm.ac.id'
+	url = 'https://mahasiswa.unair.ac.id/login.php'
 	tok = bs(ses.get(url, timeout=10, verify=False).text, 'html.parser').findAll('input')
 	dat = { 'mode':'login', 'username':usr, 'password':pwd, 'submit':'login'}
 	post = bs(ses.post(url, data=dat, timeout=10, verify=False).text, 'html.parser').text
